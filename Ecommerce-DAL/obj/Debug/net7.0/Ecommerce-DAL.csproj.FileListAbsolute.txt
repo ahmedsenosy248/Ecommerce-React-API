@@ -1,0 +1,14 @@
+D:\Ecommerce-React-Webiste\Ecommerce-DAL\bin\Debug\net7.0\Ecommerce-DAL.deps.json
+D:\Ecommerce-React-Webiste\Ecommerce-DAL\bin\Debug\net7.0\Ecommerce-DAL.runtimeconfig.json
+D:\Ecommerce-React-Webiste\Ecommerce-DAL\bin\Debug\net7.0\Ecommerce-DAL.dll
+D:\Ecommerce-React-Webiste\Ecommerce-DAL\bin\Debug\net7.0\Ecommerce-DAL.pdb
+D:\Ecommerce-React-Webiste\Ecommerce-DAL\obj\Debug\net7.0\Ecommerce-DAL.csproj.AssemblyReference.cache
+D:\Ecommerce-React-Webiste\Ecommerce-DAL\obj\Debug\net7.0\Ecommerce-DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Ecommerce-React-Webiste\Ecommerce-DAL\obj\Debug\net7.0\Ecommerce-DAL.AssemblyInfoInputs.cache
+D:\Ecommerce-React-Webiste\Ecommerce-DAL\obj\Debug\net7.0\Ecommerce-DAL.AssemblyInfo.cs
+D:\Ecommerce-React-Webiste\Ecommerce-DAL\obj\Debug\net7.0\Ecommerce-DAL.csproj.CoreCompileInputs.cache
+D:\Ecommerce-React-Webiste\Ecommerce-DAL\obj\Debug\net7.0\Ecommerce-DAL.dll
+D:\Ecommerce-React-Webiste\Ecommerce-DAL\obj\Debug\net7.0\refint\Ecommerce-DAL.dll
+D:\Ecommerce-React-Webiste\Ecommerce-DAL\obj\Debug\net7.0\Ecommerce-DAL.pdb
+D:\Ecommerce-React-Webiste\Ecommerce-DAL\obj\Debug\net7.0\Ecommerce-DAL.genruntimeconfig.cache
+D:\Ecommerce-React-Webiste\Ecommerce-DAL\obj\Debug\net7.0\ref\Ecommerce-DAL.dll
