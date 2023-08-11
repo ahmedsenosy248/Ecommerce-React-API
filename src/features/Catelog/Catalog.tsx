@@ -7,7 +7,7 @@ export default function Catalog() {
   const [products, SetProducts] = useState<Product[]>([]);
   async function GetProducts() {
     var data = await axios.get("https://localhost:44357/api/Products");
-    console.log(data.data);
+   // console.log(data.data);
     SetProducts(data.data);
   }
   useEffect(() => {
