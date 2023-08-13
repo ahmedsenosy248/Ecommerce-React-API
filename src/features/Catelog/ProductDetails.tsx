@@ -1,16 +1,18 @@
 import { Divider, Grid, Table, TableBody, TableCell, TableContainer, TableRow, Typography } from '@mui/material'
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Product } from '../../app/models/Product';
+import agent from '../../app/Api/agent';
+import NotFound from '../../app/errors/NotFound';
+import LoadingComponent from '../../app/layout/LoadingComponent';
 
 export default function ProductDetails() {
   const { id } = useParams<{ id: string }>();
   const [products, setProducts] = useState<Product | null>(null);
   const[loading, setLoading] = useState(true);
   async function Productdet() {
-    await axios.get(`https://localhost:44357/api/Products/${id}`)
-    .then(response=>setProducts(response.data))
+    id && agent.catalog.details(parseInt(id))
+    .then(response=>setProducts(response))
     .catch(error=> console.log(error))
     .finally(()=>setLoading(false));
     
@@ -20,8 +22,8 @@ export default function ProductDetails() {
     Productdet();
   }, [id])
 
-  if(loading) return <h3> Loading...</h3>
-  if(!products) return <h3> Product not found</h3>
+  if(loading) return <LoadingComponent message='Loading Details...'></LoadingComponent>
+  if(!products) return <NotFound></NotFound>
 
   return (
    <Grid container spacing={6}>
