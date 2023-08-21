@@ -1,15 +1,15 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
-import { error } from "console";
 import { toast } from "react-toastify";
 import { router } from "../router/Routes";
-import { resolve } from "path";
 
-const sleep = ()=> new Promise(resolve=>setTimeout(resolve, 500))
+const sleep = () => new Promise((resolve) => setTimeout(resolve, 500));
 
-axios.defaults.baseURL = "https://localhost:44357/api/";
+axios.defaults.baseURL = "http://localhost:5113/api/";
+axios.defaults.withCredentials = true;
 const responseBody = (response: AxiosResponse) => response.data;
 
-axios.interceptors.response.use(async response => {
+axios.interceptors.response.use(
+  async (response) => {
     await sleep();
     return response;
   },
@@ -35,7 +35,7 @@ axios.interceptors.response.use(async response => {
         toast.error(data.title);
         break;
       case 500:
-        router.navigate('/server-error', {state:{error:data}})
+        router.navigate("/server-error", { state: { error: data } });
         toast.error(data.title);
         break;
       default:
@@ -65,9 +65,19 @@ const TestErrors = {
   getValidationError: () => requests.get("buggy/validation-error"),
 };
 
+const Basket = {
+  get: () => requests.get("basket"),
+  //https://localhost:44357/api/Basket?productId=1&quantity=3
+  addItem: (productId: number, quantity = 1) =>
+    requests.post(`Basket?productId=${productId}&quantity=${quantity}`, {}),
+  removeItem: (productId: number, quantity = 1) =>
+    requests.delete(`Basket?productId=${productId}&quantity=${quantity}`),
+};
+
 const agent = {
   catalog,
   TestErrors,
+  Basket,
 };
 
 export default agent;
